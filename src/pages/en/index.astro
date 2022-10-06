@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import portrait from "../../../../public/assets/home.jpg";
 import Menu from "../../components/Menu";
 import HamburguerMenu from "../../components/HamburguerMenu";
 import Logo from "../../components/Logo";
@@ -20,7 +19,7 @@ const navItems = {};
         <Logo client:load />
       </div>
       <img
-        src={portrait}
+        src="assets/home.jpg"
         class="h-full object-cover w-full absolute z-0 top-0"
       />
       <div class="z-10 w-full grid place-items-center top-0 absolute h-screen">
