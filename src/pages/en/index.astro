@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Menu from "../../components/Menu";
 import HamburguerMenu from "../../components/HamburguerMenu";
 import Logo from "../../components/Logo";
+import { Image } from "@astrojs/image/components";
 // Data Fetching: List all Markdown posts in the repo.
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -18,8 +19,12 @@ const navItems = {};
         <HamburguerMenu client:load />
         <Logo client:load />
       </div>
-      <img
+      <Image
+        alt=""
         src="assets/home.jpg"
+        height={1080}
+        format="webp"
+        aspectRatio={3 / 4}
         class="h-full object-cover w-full absolute z-0 top-0"
       />
       <div class="z-10 w-full grid place-items-center top-0 absolute h-screen">
