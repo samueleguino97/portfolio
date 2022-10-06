@@ -1,9 +1,9 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import portrait from "../../public/assets/home.jpg";
-import Menu from "../components/Menu";
-import HamburguerMenu from "../components/HamburguerMenu";
-import Logo from "../components/Logo";
+import MainLayout from "../../layouts/MainLayout.astro";
+import portrait from "../../../../public/assets/home.jpg";
+import Menu from "../../components/Menu";
+import HamburguerMenu from "../../components/HamburguerMenu";
+import Logo from "../../components/Logo";
 // Data Fetching: List all Markdown posts in the repo.
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -34,13 +34,12 @@ const navItems = {};
             class="text-white flex items-center w-full justify-center gap-4 relative mt-24"
           >
             <a
-              href="/en"
               class="border-white/40 border hover:bg-black transition-all ease-in-out hover:border-black px-5 py-2 text-[8px]"
             >
               ENGLISH
             </a>
             <a
-              href="#"
+              href="/"
               class="border-white/40 border hover:bg-black transition-all ease-in-out hover:border-black px-5 py-2 text-[8px]"
             >
               ESPANOL
