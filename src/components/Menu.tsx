@@ -1,18 +1,10 @@
 import { useStore } from "@nanostores/react";
-import { isMenuOpen } from "../stores/menu";
+import { isMenuOpen, menu } from "../stores/menu";
 import classnames from "classnames";
 
-const links = [
-  { label: "Acerca De", href: "/about" },
-
-  { label: "Bio", href: "/bio" },
-  { label: "Servicios", href: "/services" },
-
-  { label: "Videos", href: "/videos" },
-  { label: "Contactar", href: "/contact" },
-];
 function Menu() {
   const open = useStore(isMenuOpen);
+  const links = useStore(menu);
 
   return (
     <div

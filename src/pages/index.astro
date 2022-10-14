@@ -3,8 +3,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Menu from "../components/Menu";
 import HamburguerMenu from "../components/HamburguerMenu";
 import home from "../assets/home.jpg";
+import homeBig from "../assets/home.jpeg";
 import Logo from "../components/Logo";
 import { Image, Picture } from "@astrojs/image/components";
+import { menu } from "../stores/menu";
 // Data Fetching: List all Markdown posts in the repo.
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -23,30 +25,30 @@ const navItems = {};
       <Image
         alt=""
         src={home}
-        height={1080}
+        height={2500}
         format="webp"
-        aspectRatio={5184 / 3456}
-        class="h-full object-cover w-full absolute z-0 top-0"
+        aspectRatio={1.5}
+        class="h-full w-full absolute z-0 top-0 object-cover object-top"
       />
       <div class="z-10 w-full grid place-items-center top-0 absolute h-screen">
         <div>
           <h1
-            class="text-white text-5xl text-center font-main tracking-widest leading-none"
+            class="text-white text-5xl text-center font-main tracking-widest lg:tracking-[0.5em] leading-none"
           >
             Michael Salazar
           </h1>
           <div
-            class="text-white flex items-center w-full justify-center gap-4 relative mt-24"
+            class="text-white flex items-center w-full justify-center gap-4 relative mt-24 lg:mt-12"
           >
             <a
               href="/en"
-              class="border-white/40 border hover:bg-black transition-all ease-in-out hover:border-black px-5 py-2 text-[8px]"
+              class="border-white/40 border font-main hover:bg-black transition-all ease-in-out hover:border-black px-5 py-2 text-[8px] lg:text-base"
             >
               ENGLISH
             </a>
             <a
               href="#"
-              class="border-white/40 border hover:bg-black transition-all ease-in-out hover:border-black px-5 py-2 text-[8px]"
+              class="border-white/40 border font-main hover:bg-black transition-all ease-in-out hover:border-black px-5 py-2 text-[8px] lg:text-base"
             >
               ESPANOL
             </a>

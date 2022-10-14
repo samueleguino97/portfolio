@@ -3,15 +3,14 @@ import { isMenuOpen } from "../stores/menu";
 import classnames from "classnames";
 function Logo() {
   const isOpen = useStore(isMenuOpen);
-  console.log("LOGO RENDERED", isOpen);
   return (
     <a
       href="/"
       className={classnames(
-        " left-1/2 -translate-x-1/2  duration-300   transition-all text-white",
+        " left-1/2 -translate-x-1/2 lg:scale-150 lg:translate-y-5 duration-300   transition-all text-white",
         {
-          ["translate-y-0 scale-[0.9]"]: !isOpen,
-          ["translate-y-12 scale-1"]: !!isOpen,
+          ["translate-y-0 scale-80"]: !isOpen,
+          ["translate-y-12 scale-100"]: !!isOpen,
           ["fixed"]: isOpen,
           ["absolute"]: !isOpen,
         }

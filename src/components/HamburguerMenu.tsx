@@ -10,7 +10,7 @@ function HamburguerMenu() {
         isMenuOpen.set(!open);
       }}
       className={classnames(
-        "h-4 w-6 cursor-pointer flex flex-col justify-between",
+        "h-4 w-6 lg:hidden cursor-pointer flex flex-col justify-between",
         {
           ["fixed"]: open,
         }
