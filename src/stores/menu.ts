@@ -10,3 +10,10 @@ export const menu = atom([
   { label: "Videos", href: "/videos" },
   { label: "Contactar", href: "/contact" },
 ]);
+export const embedURl = (url: string, autoplay?: boolean) => {
+  var id = url.split("?v=")[1]; //sGbxmsDFVnE
+
+  var embedlink =
+    "http://www.youtube.com/embed/" + id + (autoplay ? "?autoplay=1" : "");
+  return embedlink;
+};

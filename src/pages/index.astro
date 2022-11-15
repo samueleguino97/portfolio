@@ -3,10 +3,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Menu from "../components/Menu";
 import HamburguerMenu from "../components/HamburguerMenu";
 import home from "../assets/home.jpg";
+import concerts from "../assets/concerts.jpg";
 import homeBig from "../assets/home.jpeg";
 import Logo from "../components/Logo";
 import { Image, Picture } from "@astrojs/image/components";
-import { menu } from "../stores/menu";
+import { embedURl, menu } from "../stores/menu";
+import { Icon } from "astro-icon";
 // Data Fetching: List all Markdown posts in the repo.
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -24,6 +26,7 @@ const navItems = {};
       </div>
       <Image
         alt=""
+        id="top"
         src={home}
         height={2500}
         format="webp"
@@ -56,11 +59,133 @@ const navItems = {};
         </div>
       </div>
     </div>
-    <div>BIOGRAPHY</div>
+    <div class="font-body px-4 py-12 relative">
+      <div class="max-w-3xl mx-auto">
+        <h3 class="font-bold text-xl mb-8 font-main z-10">BIOGRAPHY</h3>
+        <p class="leading-6 font-extralight text-md z-10">
+          I fell in love with classical music when I was seven and I was
+          determined and lucky enough to become a professional concert pianist,
+          and am therefore able to share my passion with the world. Interpreting
+          the music of Rachmaninoff, Schubert, Bach is a privilege, and my
+          greatest wish is to bring it to everyone, through concert programs and
+          recordings that touch our hearts and connect us to our soul. I attach
+          the greatest importance to the singing quality of piano tone and to
+          the phrasing; for me, the piano is not a percussive instrument but
+          rather a human voice that expresses what is beyond words. And if the
+          music does not need to be described with words, it can nevertheless be
+          presented… At my Piano Unveiled concerts, I introduce the works
+          evoking the historical context, interesting facts about the composer,
+          or drawing parallels with other art forms. It helps me to establish a
+          connection with my audience and creates a different concert experience
+          for everyone, more inclusive, emotional, and relaxed. I also develop
+          multimedia projects, which follow my intuition to present this
+          timeless music in a new creative way by introducing a dialogue between
+          different art forms. The famous phrase by Dostoevsky says “Beauty will
+          save the world”. I hope that my modest contribution by bringing some
+          beauty will make it a better place.
+        </p>
 
-    <div>VIDEOS</div>
+        <a
+          href="/biography"
+          class="border-black/40 block mx-auto w-max mt-12 border font-bold font-main hover:bg-black transition-all ease-in-out hover:border-black hover:text-white px-5 py-2 text-[14px] lg:text-base"
+        >
+          READ COMPLETE BIOGRAPHY
+        </a>
+      </div>
+    </div>
+    <div class="font-body pt-4 h-screen grid place-items-center relative">
+      <Image
+        alt=""
+        src={concerts}
+        height={2500}
+        format="webp"
+        aspectRatio={1.5}
+        class="h-full w-full h-screen absolute text-white left-0 z-0 top-0 object-cover object-top"
+      />
+      <div
+        class="absolute max-w-3xl mx-auto z-10 px-4 flex flex-col justify-center items-center gap-20 text-white h-screen"
+      >
+        <h3 class="text-center text-3xl z-50 text-white mb-4 font-main">
+          CONCERTS
+        </h3>
+        <div class="text-center px-4 w-full">
+          <h4 class="mb-4 text-xl">Miami Concert Hall</h4>
+          <p class="font-main max-w-md">
+            This concert was pretty good and it was in Miami it was the best
+            experience
+          </p>
+        </div>
+        <a
+          href="/concerts"
+          class="border-white/40 block mx-auto w-max mt-4 border font-bold font-main hover:bg-black transition-all ease-in-out hover:border-black hover:text-white px-5 py-2 text-[14px] lg:text-base"
+        >
+          SEE ALL CONCERTS
+        </a>
+      </div>
+    </div>
+    <div class="font-body px-4 py-12 relative max-w-5xl mx-auto">
+      <h3 class="font-bold text-xl mb-12 font-main z-10">VIDEOS</h3>
+      <div class="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
+        <iframe
+          src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+          class="w-full aspect-video"
+          frameborder="0"
+          allowfullscreen></iframe>
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <iframe
+          src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+          class="w-full aspect-video"
+          frameborder="0"
+          allowfullscreen></iframe>
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <iframe
+          src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+          class="w-full aspect-video"
+          frameborder="0"
+          allowfullscreen></iframe>
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <iframe
+          src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+          class="w-full aspect-video"
+          frameborder="0"
+          allowfullscreen></iframe>
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <iframe
+          src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+          class="w-full aspect-video"
+          frameborder="0"
+          allowfullscreen></iframe>
+      </div>
 
-    <div>SERVICES</div>
-    <div>FOOTER</div>
+      <a
+        href="/videos"
+        class="border-black/40 block mx-auto w-max mt-16 border font-bold font-main hover:bg-black transition-all ease-in-out hover:border-black hover:text-white px-5 py-2 text-[14px] lg:text-base"
+      >
+        SEE ALL VIDEOS
+      </a>
+    </div>
+
+    <div class="bg-black/90 h-96 text-white grid place-items-center">
+      <div class="flex flex-col text-center gap-4">
+        <div class="flex gap-4">
+          <Icon
+            pack="teenyicons"
+            name="instagram-outline"
+            class="w-6 aspect-square"
+          />
+          <Icon
+            pack="teenyicons"
+            name="facebook-outline"
+            class="w-6 aspect-square"
+          />
+          <Icon
+            pack="teenyicons"
+            name="youtube-outline"
+            class="w-6 aspect-square"
+          />
+        </div>
+        <a href="#top" class="text-white/50">Back To Top</a>
+      </div>
+    </div>
   </div>
 </MainLayout>

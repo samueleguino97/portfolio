@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         main: ['"Cinzel"', "sans-serif"],
+        body: ['"Nunito Sans"', "sans-serif"],
       },
     },
   },

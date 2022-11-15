@@ -1,0 +1,138 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Menu from "../components/Menu";
+import HamburguerMenu from "../components/HamburguerMenu";
+import home from "../assets/home.jpg";
+import concerts from "../assets/concerts.jpg";
+import homeBig from "../assets/home.jpeg";
+import Logo from "../components/Logo";
+import { Image, Picture } from "@astrojs/image/components";
+import { embedURl, menu } from "../stores/menu";
+import { Icon } from "astro-icon";
+// Data Fetching: List all Markdown posts in the repo.
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+const navItems = {};
+---
+
+<MainLayout>
+  <div class="relative">
+    <div class="relative text-white h-screen bg-[#080a07]">
+      <Menu client:load />
+
+      <div class="h-14 relative z-50 px-4 flex items-center">
+        <HamburguerMenu client:load />
+        <Logo client:load />
+      </div>
+      <video
+        src={"https://nxmhpcifgwcfgjplhxzq.supabase.co/storage/v1/object/public/assets/MS%20COMPRESSED_compressed.mp4?t=2022-11-14T19%3A08%3A15.629Z#t=10"}
+        class="h-full w-full absolute z-0 top-0 object-cover object-top"
+        loop
+        muted
+        autoplay></video>
+    </div>
+    <div class="font-body py-12 relative max-w-5xl mx-auto">
+      <div class="px-4">
+        <h3 class="font-bold text-xl mb-12 font-main z-10">FEATURED VIDEO</h3>
+        <div class="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full rounded-xl aspect-video"
+            frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="font-body px-4 py-12 relative max-w-5xl mx-auto">
+        <h3 class="font-bold text-xl mb-12 font-main z-10">RECENT VIDEOS</h3>
+        <div class="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full rounded-xl aspect-video"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full rounded-xl aspect-video"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full rounded-xl aspect-video"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full rounded-xl aspect-video"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full rounded-xl aspect-video"
+            frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="font-body px-4 py-12 relative max-w-5xl mx-auto">
+        <h3 class="font-bold text-xl mb-12 font-main z-10">POPULAR VIDEOS</h3>
+        <div class="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full aspect-video rounded-xl"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full aspect-video rounded-xl"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full aspect-video v"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full aspect-video rounded-xl"
+            frameborder="0"
+            allowfullscreen></iframe>
+          <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+          <iframe
+            src={embedURl("https://www.youtube.com/watch?v=2bf_gmvMJA8")}
+            class="w-full aspect-video rounded-xl"
+            frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div><div class="bg-black/90 h-96 text-white grid place-items-center">
+      <div class="flex flex-col text-center gap-4">
+        <div class="flex gap-4">
+          <Icon
+            pack="teenyicons"
+            name="instagram-outline"
+            class="w-6 aspect-square"
+          />
+          <Icon
+            pack="teenyicons"
+            name="facebook-outline"
+            class="w-6 aspect-square"
+          />
+          <Icon
+            pack="teenyicons"
+            name="youtube-outline"
+            class="w-6 aspect-square"
+          />
+        </div>
+        <a href="#top" class="text-white/50">Back To Top</a>
+      </div>
+    </div>
+  </div>
+</MainLayout>

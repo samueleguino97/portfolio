@@ -1,0 +1,132 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Menu from "../components/Menu";
+import HamburguerMenu from "../components/HamburguerMenu";
+import home from "../assets/home.jpg";
+import concerts from "../assets/concerts.jpg";
+import bio from "../assets/biography.jpeg";
+import Logo from "../components/Logo";
+import { Image, Picture } from "@astrojs/image/components";
+import { embedURl, menu } from "../stores/menu";
+import { Icon } from "astro-icon";
+// Data Fetching: List all Markdown posts in the repo.
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+const navItems = {};
+---
+
+<MainLayout>
+  <div class="relative">
+    <div class="relative text-white h-screen bg-[#080a07]">
+      <Menu client:load />
+
+      <div class="h-14 relative z-50 px-4 flex items-center">
+        <HamburguerMenu client:load />
+        <Logo client:load />
+      </div>
+      <Image
+        alt=""
+        id="top"
+        src={bio}
+        height={2500}
+        format="webp"
+        aspectRatio={1.5}
+        class="h-full w-full absolute z-0 top-0 object-cover object-top"
+      />
+    </div>
+    <div class="font-body px-4 py-12 relative">
+      <div class="max-w-3xl mx-auto">
+        <h3 class="font-bold text-xl mb-8 font-main z-10">BIOGRAPHY</h3>
+        <p class="leading-6 font-extralight text-md z-10">
+          I fell in love with classical music when I was seven and I was
+          determined and lucky enough to become a professional concert pianist,
+          and am therefore able to share my passion with the world. Interpreting
+          the music of Rachmaninoff, Schubert, Bach is a privilege, and my
+          greatest wish is to bring it to everyone, through concert programs and
+          recordings that touch our hearts and connect us to our soul. I attach
+          the greatest importance to the singing quality of piano tone and to
+          the phrasing; for me, the piano is not a percussive instrument but
+          rather a human voice that expresses what is beyond words. And if the
+          music does not need to be described with words, it can nevertheless be
+          presented… At my Piano Unveiled concerts, I introduce the works
+          evoking the historical context, interesting facts about the composer,
+          or drawing parallels with other art forms. It helps me to establish a
+          connection with my audience and creates a different concert experience
+          for everyone, more inclusive, emotional, and relaxed. I also develop
+          multimedia projects, which follow my intuition to present this
+          timeless music in a new creative way by introducing a dialogue between
+          different art forms. The famous phrase by Dostoevsky says “Beauty will
+          save the world”. I hope that my modest contribution by bringing some
+          beauty will make it a better place.
+        </p>
+      </div>
+    </div>
+    <div class="font-body px-4 py-12 relative max-w-5xl mx-auto">
+      <h3 class="font-bold text-xl mb-12 font-main z-10">PHOTOS</h3>
+      <div class="grid grid-cols-1 xl:grid-cols-3 place-items-center gap-8">
+        <Image
+          alt="s"
+          format="webp"
+          aspectRatio={1}
+          src={concerts}
+          class="w-full aspect-square object-cover"
+        />
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <Image
+          alt="s"
+          format="webp"
+          aspectRatio={1}
+          src={concerts}
+          class="w-full aspect-square object-cover"
+        />
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <Image
+          alt="s"
+          format="webp"
+          aspectRatio={1}
+          src={concerts}
+          class="w-full aspect-square object-cover"
+        />
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <Image
+          alt="s"
+          format="webp"
+          aspectRatio={1}
+          src={concerts}
+          class="w-full aspect-square object-cover"
+        />
+        <div class="h-1 w-3 rounded-full bg-slate-800 lg:hidden"></div>
+        <Image
+          alt="s"
+          format="webp"
+          aspectRatio={1}
+          src={concerts}
+          class="w-full aspect-square object-cover"
+        />
+      </div>
+    </div>
+
+    <div class="bg-black/90 h-96 text-white grid place-items-center">
+      <div class="flex flex-col text-center gap-4">
+        <div class="flex gap-4">
+          <Icon
+            pack="teenyicons"
+            name="instagram-outline"
+            class="w-6 aspect-square"
+          />
+          <Icon
+            pack="teenyicons"
+            name="facebook-outline"
+            class="w-6 aspect-square"
+          />
+          <Icon
+            pack="teenyicons"
+            name="youtube-outline"
+            class="w-6 aspect-square"
+          />
+        </div>
+        <a href="#top" class="text-white/50">Back To Top</a>
+      </div>
+    </div>
+  </div>
+</MainLayout>
